@@ -1,4 +1,4 @@
-package main
+package consignmentMongo
 
 import (
 	"context"
@@ -83,7 +83,7 @@ func UnmarshalConsignment(consignment *Consignment) *pb.Consignment {
 	}
 }
 
-type repository interface {
+type Repository interface {
 	Create(ctx context.Context, consignment *Consignment) error
 	GetAll(ctx context.Context) ([]*Consignment, error)
 }

@@ -1,4 +1,4 @@
-package main
+package consignmentMongo
 
 import (
 	"context"
@@ -8,16 +8,16 @@ import (
 
 // MongoRepository implementation
 type MongoRepository struct {
-	collection *mongo.Collection
+	Collection *mongo.Collection
 }
 
 func (repository *MongoRepository) Create(ctx context.Context, consignment *Consignment) error {
-	_, err := repository.collection.InsertOne(ctx, consignment)
+	_, err := repository.Collection.InsertOne(ctx, consignment)
 	return err
 }
 
 func (repository *MongoRepository) GetAll(ctx context.Context) ([]*Consignment, error) {
-	cur, err := repository.collection.Find(ctx, nil, nil)
+	cur, err := repository.Collection.Find(ctx, nil, nil)
 	var consignments []*Consignment
 	for cur.Next(ctx) {
 		var consignment *Consignment

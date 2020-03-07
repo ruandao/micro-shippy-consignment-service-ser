@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/micro/go-micro"
+	"github.com/ruandao/micro-shippy-consignment-service-ser/consignmentMongo"
 	pb "github.com/ruandao/micro-shippy-consignment-service-ser/proto/consignment"
 	vesselProto "github.com/ruandao/micro-shippy-vessel-service/proto/vessel"
 	"log"
@@ -18,7 +19,7 @@ func main() {
 	
 	// Create a new service. Optionally include some options here.
 	srv := micro.NewService(
-		micro.Name("go.micro.srv.consignment"),
+		micro.Name(consignmentMongo.CONST_SERVICE_NAME),
 	)
 
 	// Init will parse the command line flags.
@@ -29,7 +30,7 @@ func main() {
 		uri = defaultHost
 	}
 	
-	client, err := CreateClient(context.Background(), uri, 0)
+	client, err := consignmentMongo.CreateClient(context.Background(), uri, 0)
 	if err != nil {
 		log.Panic(err)
 	}
@@ -37,9 +38,9 @@ func main() {
 
 	consignmentCollection := client.Database("shippy").Collection("consignments")
 
-	repository := &MongoRepository{consignmentCollection}
+	repository := &consignmentMongo.MongoRepository{Collection: consignmentCollection}
 	vesselClient := vesselProto.NewVesselServiceClient("go.micro.srv.vessel", srv.Client())
-	h := &handler{repository, vesselClient}
+	h := &consignmentMongo.Handler{Repository: repository, VesselClient: vesselClient}
 
 
 	// Register handler
