@@ -6,8 +6,8 @@ import (
 	"github.com/micro/go-micro"
 	"github.com/ruandao/micro-shippy-consignment-service-ser/consignmentMongo"
 	pb "github.com/ruandao/micro-shippy-consignment-service-ser/proto/consignment"
-	"github.com/ruandao/micro-shippy-vessel-service/lib"
-	vesselProto "github.com/ruandao/micro-shippy-vessel-service/proto/vessel"
+	"github.com/ruandao/micro-shippy-vessel-service-ser/lib"
+	vesselProto "github.com/ruandao/micro-shippy-vessel-service-ser/proto/vessel"
 	"log"
 	"os"
 )
@@ -20,7 +20,7 @@ func main() {
 	
 	// Create a new service. Optionally include some options here.
 	srv := micro.NewService(
-		micro.Name(consignmentMongo.CONST_SERVICE_NAME),
+		micro.Name(consignmentMongo.CONST_SER_NAME_CONSIGNMENT),
 	)
 
 	// Init will parse the command line flags.

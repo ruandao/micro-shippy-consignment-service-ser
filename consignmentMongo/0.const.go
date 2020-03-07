@@ -1,3 +1,3 @@
 package consignmentMongo
 
-const CONST_SERVICE_NAME = "go.micro.srv.consignment"
+const CONST_SER_NAME_CONSIGNMENT = "go.micro.srv.consignment"
