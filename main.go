@@ -6,6 +6,7 @@ import (
 	"github.com/micro/go-micro"
 	"github.com/ruandao/micro-shippy-consignment-service-ser/consignmentMongo"
 	pb "github.com/ruandao/micro-shippy-consignment-service-ser/proto/consignment"
+	"github.com/ruandao/micro-shippy-vessel-service/lib"
 	vesselProto "github.com/ruandao/micro-shippy-vessel-service/proto/vessel"
 	"log"
 	"os"
@@ -39,7 +40,7 @@ func main() {
 	consignmentCollection := client.Database("shippy").Collection("consignments")
 
 	repository := &consignmentMongo.MongoRepository{Collection: consignmentCollection}
-	vesselClient := vesselProto.NewVesselServiceClient("go.micro.srv.vessel", srv.Client())
+	vesselClient := vesselProto.NewVesselServiceClient(lib.CONST_SERVICE_NAME, srv.Client())
 	h := &consignmentMongo.Handler{Repository: repository, VesselClient: vesselClient}
 
 
