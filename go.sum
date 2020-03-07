@@ -376,8 +376,8 @@ github.com/rogpeppe/fastuuid v0.0.0-20150106093220-6724a57986af/go.mod h1:XWv6So
 github.com/rogpeppe/go-internal v1.1.0/go.mod h1:M8bDsm7K2OlrFYOpmOWEs/qY81heoFRclV5y23lUDJ4=
 github.com/rogpeppe/go-internal v1.2.2/go.mod h1:M8bDsm7K2OlrFYOpmOWEs/qY81heoFRclV5y23lUDJ4=
 github.com/rogpeppe/go-internal v1.3.0/go.mod h1:M8bDsm7K2OlrFYOpmOWEs/qY81heoFRclV5y23lUDJ4=
-github.com/ruandao/micro-shippy-vessel-service-ser v0.0.0-20200307070538-ee550b75779b h1:2WUDP9Qn+l1TSV/nKWJ1OZOAf+tbqIPJU5CGqObc1uo=
-github.com/ruandao/micro-shippy-vessel-service-ser v0.0.0-20200307070538-ee550b75779b/go.mod h1:H1NmLhLr4gPxhxjTpfZAEf8zoO3Tasmy+Vp/hwCoKGI=
+github.com/ruandao/micro-shippy-vessel-service-ser v0.0.0-20200307071849-e703e61d66b7 h1:yMHtUj6B0f+PqBIt5roE1nq+fESede0jdDQmzqoF4Go=
+github.com/ruandao/micro-shippy-vessel-service-ser v0.0.0-20200307071849-e703e61d66b7/go.mod h1:H1NmLhLr4gPxhxjTpfZAEf8zoO3Tasmy+Vp/hwCoKGI=
 github.com/russross/blackfriday/v2 v2.0.1/go.mod h1:+Rmxgy9KzJVeS9/2gXHxylqXiyQDYRxCVz55jmeOWTM=
 github.com/sacloud/libsacloud v1.26.1/go.mod h1:79ZwATmHLIFZIMd7sxA3LwzVy/B77uj3LDoToVTxDoQ=
 github.com/satori/go.uuid v1.2.0/go.mod h1:dA0hQrYB0VpLJoorglMZABFdXlWrHn1NEOzdhQKdks0=

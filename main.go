@@ -40,7 +40,7 @@ func main() {
 	consignmentCollection := client.Database("shippy").Collection("consignments")
 
 	repository := &consignmentMongo.MongoRepository{Collection: consignmentCollection}
-	vesselClient := vesselProto.NewVesselServiceClient(lib.CONST_SERVICE_NAME, srv.Client())
+	vesselClient := vesselProto.NewVesselServiceClient(lib.CONST_SER_NAME_VESSEL, srv.Client())
 	h := &consignmentMongo.Handler{Repository: repository, VesselClient: vesselClient}
 
 
